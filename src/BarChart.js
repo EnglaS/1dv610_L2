@@ -15,16 +15,18 @@ export class BarChart {
 
     render() {
         // Variabler för att styra storleken på diagrammet
-        const chartWidth = 500
+        const chartWidth = 1000
         const chartHeight = 300
         const barWidth = 50
         const barSpacing = 20
+        const labelSpacing = 40
+        const totalHeight = chartHeight + labelSpacing
         const maxDataValue = Math.max(...this.data.map(d => d.value))
 
         // Skapa SVG-elementet med korrekt namnrymd
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         svg.setAttribute('width', chartWidth)
-        svg.setAttribute('height', chartHeight)
+        svg.setAttribute('height', totalHeight)
         svg.setAttribute('style', 'background: #eee;')
 
         // Loopa igenom data och skapa rektanglar för varje datapunkt
@@ -37,7 +39,7 @@ export class BarChart {
             rect.setAttribute('y', chartHeight - barHeight) // Placera den från botten
             rect.setAttribute('width', barWidth)
             rect.setAttribute('height', barHeight)
-            rect.setAttribute('fill', 'teal')
+            rect.setAttribute('fill', 'purple')
 
             // Lägg till rektangeln i SVG-elementet
             svg.appendChild(rect)
@@ -45,8 +47,10 @@ export class BarChart {
             // Skapa en textlabel under varje stapel
             const text = document.createElementNS('http://www.w3.org/2000/svg', 'text')
             text.setAttribute('x', index * (barWidth + barSpacing) + barWidth / 2)
-            text.setAttribute('y', chartHeight + 15) // Placera den under stapeln
+            text.setAttribute('y', chartHeight + 25) // Placera den under stapeln
             text.setAttribute('text-anchor', 'middle')
+            text.setAttribute('font-size', '14px');  // Set font size
+            text.setAttribute('fill', 'black');      // Set text color
             text.textContent = item.label
             svg.appendChild(text)
         })
