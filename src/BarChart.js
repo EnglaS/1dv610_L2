@@ -53,6 +53,16 @@ export class BarChart {
             text.setAttribute('fill', 'black');      // Set text color
             text.textContent = item.label
             svg.appendChild(text)
+
+            // Skapa en textlabel för värde
+            const värdeText = document.createElementNS('http://www.w3.org/2000/svg', 'text')
+            värdeText.setAttribute('x', index * (barWidth + barSpacing) + barWidth / 2)
+            värdeText.setAttribute('y', chartHeight - 5) // Placera den under stapeln
+            värdeText.setAttribute('text-anchor', 'middle')
+            värdeText.setAttribute('font-size', '14px');  // Set font size
+            värdeText.setAttribute('fill', 'white');      // Set text color
+            värdeText.textContent = item.value
+            svg.appendChild(värdeText)
         })
 
         // Returnera SVG-elementets yttre HTML som en sträng

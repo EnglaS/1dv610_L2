@@ -1,4 +1,5 @@
-import { BarChart} from '../src/BarChart.js'
+import { BarChart } from '../src/BarChart.js'
+import { LineChart } from '../src/LineChart.js'
 
 console.log('testApp.js is running')
 
@@ -20,3 +21,9 @@ const chartContainer = document.createElement('div')
 chartContainer.innerHTML = barChart.render()
 
 document.body.appendChild(chartContainer)
+
+const lineChart = new LineChart(data)
+const lineChartContainer = document.createElement('div')
+lineChartContainer.innerHTML = lineChart.render()
+
+document.body.appendChild(lineChartContainer)
