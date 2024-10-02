@@ -1,5 +1,4 @@
-import { BarChart } from '../src/BarChart.js'
-import { LineChart } from '../src/LineChart.js'
+import { ChartLibrary } from '../src/ChartLibrary.js'
 
 console.log('testApp.js is running')
 
@@ -15,15 +14,16 @@ const data = [
     { label: "September", value: 35 }
 ]
 
+const charts = new ChartLibrary
 
-const barChart = new BarChart(data)
+// create barChart
+const barChart = charts.createBarChart(data)
 const chartContainer = document.createElement('div')
-chartContainer.innerHTML = barChart.render()
-
+chartContainer.innerHTML = barChart
 document.body.appendChild(chartContainer)
 
-const lineChart = new LineChart(data)
+// create lineChart
+const lineChart = charts.createLineChart(data)
 const lineChartContainer = document.createElement('div')
-lineChartContainer.innerHTML = lineChart.render()
-
+lineChartContainer.innerHTML = lineChart
 document.body.appendChild(lineChartContainer)
