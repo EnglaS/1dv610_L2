@@ -46,6 +46,35 @@ Tester genomfördes på följande miljö:
 - **Utfört resultat**: Diagrammet visade felaktiga negativa staplar som gick utanför diagrammets y-axel.
 - **Status**: Fail
 
+### Testfall TC03: Verifiera att linjediagram skapas korrekt
+- **Beskrivning**: Testa om ett linjediagram genereras korrekt med giltig data.
+- **Indata**:
+  ```json
+  [
+    {"label": "January", "value": 40},
+    {"label": "February", "value": 25},
+    {"label": "March", "value": 35}
+  ]
+  ```
+- **Förväntat resultat**: Linjediagrammet ska visa tre staplar med värdena 40, 25 och 35.
+- **Utfört resultat**: Linjediagrammet genererades korrekt med alla tre staplarna.
+- **Status**: Pass
+
+### Testfall TC04: Hantering av negativa värden i linjediagram
+**Testfall TC02**: Hantering av negativa värden i linjediagram.
+- **Beskrivning**: Testa hur linjediagrammet hanterar negativa värden i datan.
+- **Indata**:
+  ```json
+  [
+    {"label": "January", "value": -10},
+    {"label": "February", "value": 20},
+    {"label": "March", "value": -5}
+  ]
+  ```
+- **Förväntat resultat**: Stapeldiagrammet ska hantera negativa värden korrekt (antingen genom att visa negativa staplar eller genom ett felmeddelande).
+- **Utfört resultat**: Diagrammet visade felaktiga negativa staplar som gick utanför diagrammets y-axel.
+- **Status**: Fail
+
 ## 5. Sammanfattning av Testresultat
 Sammanfattningsvis klarade biblioteket 1 av 2 testfall. Funktionaliteten för att skapa stapeldiagram och linjediagram fungerade som förväntat med giltiga data. Ett testfall misslyckades, relaterat till hanteringen av negativa värden. Dessa buggar bör åtgärdas innan biblioteket är redo för användning i produktionsmiljö.
 
@@ -59,3 +88,9 @@ Testerna visar att Graph/Chart Library är funktionellt och presterar bra med gi
 
 ### Testfall TC02: Hantering av negativa värden i stapeldiagram
 ![alt text](image-1.png)
+
+### Testfall TC03: Verifiera att linjediagram skapas korrekt
+![alt text](image-2.png)
+
+### Testfall TC04: Hantering av negativa värden i linjediagram
+![alt text](image-3.png)

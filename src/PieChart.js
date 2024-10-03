@@ -1,5 +1,7 @@
 // OBS!! Inte implementerad än!!
 
+// -----------------------------------------------------------------
+
 // createPieChart(data): Skapar ett cirkeldiagram från datan.
 
 // Cirkeldiagram:

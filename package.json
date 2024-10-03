@@ -1,0 +1,17 @@
+{
+  "name": "1dv610_l2",
+  "version": "1.0.0",
+  "description": "* createElementNS används för att skapa SVG-element med namnutrymme.\r * Staplarna placeras med hjälp av x- och y-attributen baserat på deras index och värden.\r * Etiketter placeras under varje stapel med hjälp av <text>-element och placeras i mitten av varje stapel med `text-anchor: middle`.",
+  "main": "./test/testApp.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.4.8"
+  }
+}
