@@ -52,6 +52,7 @@ Appen är enkel och behöver ingen server för att köras. All kod körs i webbl
 - Förbättrad visualisering med fler diagramtyper.
 
 ![Bild på Applikation](image.png)
+*Bild på applikationen*
 
 ---
 ---
