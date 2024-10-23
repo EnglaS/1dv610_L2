@@ -51,6 +51,8 @@ Appen är enkel och behöver ingen server för att köras. All kod körs i webbl
 - Möjlighet att spara och synka resultat via molnet.
 - Förbättrad visualisering med fler diagramtyper.
 
+![Bild på Applikation](image.png)
+
 ---
 ---
 ---
