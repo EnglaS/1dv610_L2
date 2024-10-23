@@ -1,10 +1,12 @@
 import { ChartLibrary } from "./charts/ChartLibrary";
 import { DataStorage } from "./components/DataStorage";
 import { Results } from "./components/Results";
+import { ShuffleSequence } from "./components/ShuffleSequence";
 import { Timer } from "./components/Timer";
 
 // Skapa timerinstans
 const timer = new Timer()
+const shuffleSequence = new ShuffleSequence()
 
 // Hämtar referenser till HTML-element
 const startButton = document.getElementById('startButton');
@@ -12,6 +14,7 @@ const stopButton = document.getElementById('stopButton');
 const resultContainer = document.getElementById('resultContainer');
 const chartContainer = document.getElementById('chartContainer');
 const timerDisplay = document.getElementById('timerDisplay');
+const sequenceDisplay = document.getElementById('sequenceDisplay');
 
 let timerInterval = null
 
@@ -36,6 +39,10 @@ stopButton.addEventListener('click', () => {
     updateChart()
     startButton.disabled = false
     stopButton.disabled = true
+
+    // Generera och visa en ny blandningssekvens
+    const newSequence = shuffleSequence.generateSequence()
+    sequenceDisplay.textContent = `${newSequence}`
 })
 
 function updateChart() {
@@ -51,4 +58,6 @@ function updateChart() {
 document.addEventListener('DOMContentLoaded', () => {
     Results.displayResults(resultContainer)
     updateChart()
+    const initialSequence = shuffleSequence.generateSequence()
+    sequenceDisplay.textContent = `${initialSequence}`
 })
