@@ -12,14 +12,14 @@ export class DataStorage {
      * Sparar ett resultat (tid) i localStorage.
      *
      * @static
-     * @param {number} time - Tiden som ska sparas, i sekunder.
+     * @param {number} elapsedTimeInSeconds - Tiden som ska sparas, i sekunder.
      */
-    static saveResult(time) {
+    static saveResult(elapsedTimeInSeconds) {
         // Hämta befintliga resultat från localStorage
         const results = this.getResults()
 
         // Lägg till det nya resultatet med aktuell tidpunkt
-        results.push({ date: new Date().toISOString(), time })
+        results.push({ date: new Date().toISOString(), time: elapsedTimeInSeconds })
 
         // Spara tillbaka alla resultat till localStorage
         localStorage.setItem('results', JSON.stringify(results)) 

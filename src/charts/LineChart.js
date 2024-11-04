@@ -22,10 +22,10 @@ export class LineChart {
      * @returns {HTMLElement} - the svg tag.
      */
     render() {
-        const svg = this.#createSvgElement() // Skapa SVG-elementet
-        const points = this.#generatePointsAndElements(svg) // Generera punkterna och cirklarna
-        this.#drawPolyline(svg, points) // Rita linjen baserat på punkterna
-        return svg.outerHTML
+        const svgElement = this.#createSvgElement() // Skapa SVG-elementet
+        const points = this.#generatePointsAndElements(svgElement) // Generera punkterna och cirklarna
+        this.#drawPolyline(svgElement, points) // Rita linjen baserat på punkterna
+        return svgElement.outerHTML
     }
     
     /**
@@ -40,21 +40,21 @@ export class LineChart {
         const padding = 40
         const totalHeight = chartHeight + labelSpacing
 
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        svg.setAttribute('width', chartWidth + padding * 2)
-        svg.setAttribute('height', totalHeight + padding)
-        svg.setAttribute('style', 'background: #eee;')
+        const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        svgElement.setAttribute('width', chartWidth + padding * 2)
+        svgElement.setAttribute('height', totalHeight + padding)
+        svgElement.setAttribute('style', 'background: #eee;')
 
-        return svg
+        return svgElement
     }
     
     /**
      * Privat metod för att generera datapunkterna, cirklar och textetiketter.
      *
-     * @param {HTMLElement} svg - the svg tag.
+     * @param {HTMLElement} svgElement - the svg tag.
      * @returns {HTMLElement} - the svg tag.
      */
-    #generatePointsAndElements(svg) {
+    #generatePointsAndElements(svgElement) {
         const chartWidth = 800
         const chartHeight = 300
         const maxDataValue = Math.max(...this.data.map(d => d.value))
@@ -68,36 +68,36 @@ export class LineChart {
             const y = chartHeight - (item.value / maxDataValue) * chartHeight + padding
             points += `${x},${y} `
 
-            this.#createCircle(svg, x, y)
-            this.#createTextLabel(svg, item.label, x, chartHeight + padding + 15)
-            this.#createValueLabel(svg, item.value, x, y - 20)
+            this.#createCircle(svgElement, x, y)
+            this.#createTextLabel(svgElement, item.label, x, chartHeight + padding + 15)
+            this.#createValueLabel(svgElement, item.value, x, y - 20)
         })
 
         return points.trim()
     }
 
     // Privat metod för att skapa en cirkel vid varje punkt
-    #createCircle(svg, x, y) {
+    #createCircle(svgElement, x, y) {
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
         circle.setAttribute('cx', x)
         circle.setAttribute('cy', y)
         circle.setAttribute('r', 4)
         circle.setAttribute('fill', 'teal')
-        svg.appendChild(circle)
+        svgElement.appendChild(circle)
     }
 
     // Privat metod för att skapa en textlabel under punkten
-    #createTextLabel(svg, label, x, y) {
+    #createTextLabel(svgElement, label, x, y) {
         const text = document.createElementNS('http://www.w3.org/2000/svg', 'text')
         text.setAttribute('x', x)
         text.setAttribute('y', y)
         text.setAttribute('text-anchor', 'middle')
         text.textContent = label
-        svg.appendChild(text)
+        svgElement.appendChild(text)
     }
 
     // Privat metod för att skapa värdetext nära punkten
-    #createValueLabel(svg, value, x, y) {
+    #createValueLabel(svgElement, value, x, y) {
         const värdeText = document.createElementNS('http://www.w3.org/2000/svg', 'text')
         värdeText.setAttribute('x', x)
         värdeText.setAttribute('y', y)
@@ -105,16 +105,16 @@ export class LineChart {
         värdeText.setAttribute('font-size', '14px')
         värdeText.setAttribute('fill', 'black')
         värdeText.textContent = value
-        svg.appendChild(värdeText)
+        svgElement.appendChild(värdeText)
     }
 
     // Privat metod för att rita en polyline baserat på punkterna
-    #drawPolyline(svg, points) {
+    #drawPolyline(svgElement, points) {
         const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline')
         polyline.setAttribute('points', points)
         polyline.setAttribute('fill', 'none')
         polyline.setAttribute('stroke', 'teal')
         polyline.setAttribute('stroke-width', 2)
-        svg.appendChild(polyline)
+        svgElement.appendChild(polyline)
     }
 }
