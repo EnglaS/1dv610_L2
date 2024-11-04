@@ -32,6 +32,7 @@ createLineChart('Testfall TC03: Verifiera att linjediagram skapas korrekt', data
 // TC04
 createLineChart('Testfall TC04: Hantering av negativa värden i linjediagram', dataTc0204)
 
+
 function createBarChart (headerText, data) {
     const header = document.createElement('h2')
     header.textContent = headerText

@@ -9,6 +9,7 @@ Denna dokumentation beskriver hur du använder klasserna `BarChart` och `LineCha
 1. [BarChart.js - Förklaring och användning](#barchart)
 2. [LineChart.js - Förklaring och användning](#linechart)
 3. [ChartLibrary - Exempel på användning](#chartlibrary)
+4. [Installationsanvisningar](#installation)
 
 <a name="barchart"></a>
 ## BarChart.js - Förklaring och användning
@@ -105,6 +106,52 @@ I detta exempel används ChartLibrary för att generera och rendera både ett st
 *Resultat från ovanstående kod*
 
 -------------------------------
+
+<a name="installation"></a>
+## Installationsanvisningar
+
+1. **Klona detta repository:**
+
+```bash
+git clone <repository-url>
+cd <repository-folder>
+```
+
+2. **Installera en lokal server (om du inte redan har en):**
+
+- Om du använder Node.js, intallera exempelvis `vite` eller `http-server`:
+
+```bash
+npm install vite
+```
+
+3. **Kör den lokala servern:**
+
+```bash
+vite
+```
+
+Detta gör att du kan testa och visa dina SVG-diagram i webbläsaren.
+
+4. **Inkludera JavaScript-filertna i ditt projekt:**
+
+- Lägg till följande script-taggar i din HTML-fil:
+
+```html
+<script type="module" src="./BarChart.js"></script>
+<script type="module" src="./LineChart.js"></script>
+<script type="module" src="./ChartLibrary.js"></script>
+```
+
+5. Använd biblioteksmetoderna för att skapa diagram:
+
+```javascript
+import { ChartLibrary } from './ChartLibrary.js'
+
+const chartLib = new ChartLibrary()
+const barChart = chartLib.createBarChart([{ label: 'Jan', value: 30 }, { label: 'Feb', value: 20 }])
+document.getElementById('chart-container').innerHTML = barChart
+```
 
 ## Ytterligare förbättringar:
 PieChart: En funktion för att skapa cirkeldiagram (PieChart) är under utveckling och kommer att läggas till i framtiden.
