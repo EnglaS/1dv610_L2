@@ -113,9 +113,11 @@ I detta exempel används ChartLibrary för att generera och rendera både ett st
 1. **Klona detta repository:**
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone <repository-url> 
+cd 1dv610_L2
 ```
+
+*(repository url depends on what method you're using)*
 
 2. **Installera en lokal server (om du inte redan har en):**
 
