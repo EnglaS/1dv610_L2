@@ -61,7 +61,7 @@ Tester genomfördes på följande miljö:
 - **Status**: Pass
 
 ### Testfall TC04: Hantering av negativa värden i linjediagram
-**Testfall TC02**: Hantering av negativa värden i linjediagram.
+**Testfall TC04**: Hantering av negativa värden i linjediagram.
 - **Beskrivning**: Testa hur linjediagrammet hanterar negativa värden i datan.
 - **Indata**:
   ```json

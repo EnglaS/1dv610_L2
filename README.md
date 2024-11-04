@@ -33,6 +33,10 @@ const chart = new BarChart(data)
 document.body.innerHTML = chart.render()
 ```
 
+![Example of a bar chart](example_barchart.png)
+
+*Resultat från ovanstående kod*
+
 <a name="linechart"></a>
 ## LineChart.js - Förklaring och användning
 I LineChart.js skapas linjediagram där datapunkterna kopplas samman med en linje. Varje punkt markeras med en cirkel och en etikett.
@@ -54,6 +58,10 @@ const chart = new LineChart(data)
 document.body.innerHTML = chart.render()
 ```
 I detta exempel skapas ett linjediagram som kopplar samman datapunkterna med en linje.
+
+![Example of a line chart](example_linechart.png)
+
+*Resultat från ovanstående kod*
 
 <a name="chartlibrary"></a>
 
@@ -91,6 +99,10 @@ lineChartContainer.innerHTML = lineChart
 document.body.appendChild(lineChartContainer)
 ```
 I detta exempel används ChartLibrary för att generera och rendera både ett stapel- och linjediagram baserat på samma datamängd.
+
+![Example of ChartLibrary usage](example_chartlibrary.png)
+
+*Resultat från ovanstående kod*
 
 -------------------------------
 
