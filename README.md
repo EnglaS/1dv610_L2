@@ -133,7 +133,7 @@ vite
 
 Detta gör att du kan testa och visa dina SVG-diagram i webbläsaren.
 
-4. **Inkludera JavaScript-filertna i ditt projekt:**
+4. **Inkludera JavaScript-filerna i ditt projekt:**
 
 - Lägg till följande script-taggar i din HTML-fil:
 
