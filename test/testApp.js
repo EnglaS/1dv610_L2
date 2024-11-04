@@ -1,15 +1,13 @@
 import { ChartLibrary } from '../src/ChartLibrary.js'
 
 const data = [
-    { label: "January", value: 40 },
-    { label: "February", value: 25 },
-    { label: "March", value: 35 },
-    { label: "April", value: 50 },
-    { label: "May", value: 5 },
-    { label: "June", value: 15 },
-    { label: "July", value: 45 },
-    { label: "August", value: 10 },
-    { label: "September", value: 35 }
+    { label: "This", value: 40 },
+    { label: "Is", value: 25 },
+    { label: "An", value: 35 },
+    { label: "Example", value: 50 },
+    { label: "Of", value: 5 },
+    { label: "Bar", value: 15 },
+    { label: "Chart", value: 45 }
 ]
 
 const charts = new ChartLibrary

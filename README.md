@@ -2,6 +2,9 @@
 
 Denna dokumentation beskriver hur du använder klasserna `BarChart` och `LineChart` för att generera stapel- och linjediagram med hjälp av SVG. Vi går igenom koden och visar exempel på hur klasserna kan användas.
 
+![Example of Bar Chart](image-3.png)
+![Example of Line Chart](image-2.png)
+
 ## Innehåll
 1. [BarChart.js - Förklaring och användning](#barchart)
 2. [LineChart.js - Förklaring och användning](#linechart)
