@@ -33,8 +33,9 @@ export class Timer {
      * @returns {String} - the total time with two decimals.
      */
     stopTimer() {
-        this.endTime = Date.now()
-        return ((this.endTime - this.startTime) / 1000).toFixed(2) // Tid i sekunder med två decimaler
+        if (!this.startTime) return undefined;
+        this.endTime = Date.now();
+        return ((this.endTime - this.startTime) / 1000).toFixed(2); // Tid i sekunder med två decimaler
     }
 
     

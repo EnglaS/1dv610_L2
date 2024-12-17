@@ -84,11 +84,13 @@ This chapter helped me understand the importance of clean interfaces and careful
 
 This chapter emphasized the importance of thorough and meaningful testing. Reflections:
 
-1. **Test Coverage:** While I implemented some manual tests for app functionality, I need to improve automated test coverage, especially for edge cases like negative values in charts.
+**Test Coverage:** I have implemented automated tests for the core functionality of the application, including classes like Timer, DataStorage, and ShuffleSequence. However, I encountered challenges testing components that rely on web APIs, such as document and localStorage, in the Node.js test environment. To address this, I integrated tools like jsdom and node-localstorage to simulate a browser-like environment for my tests.
 
-2. I aim to write small, focused tests for individual components, such as `BarChart.render`. Each test should verify one specific behavior (e.g., that bars are scaled correctly).
+**Small, Focused Tests:** I focused on writing small, targeted tests for individual components. For instance, the Timer class has tests to ensure accurate time calculations for startTimer, stopTimer, and getCurrentTime. Similarly, the ShuffleSequence tests verify that a sequence of exactly 25 valid moves is generated.
 
-3. **Testing Edge Cases:** Inspired by this chapter, I identified the need to add more tests for edge cases, such as handling empty datasets or extremely large numbers.
+**Testing Edge Cases:** Inspired by this chapter, I added tests to cover edge cases, such as handling empty datasets when generating charts and ensuring localStorage can handle missing or corrupted data. I also identified the need to improve error handling for unsupported scenarios, such as negative values in charts, which will require further development.
+
+**Integration Challenges:** While testing methods that interact with the DOM (e.g., BarChart.render) proved more complex, tools like jsdom enabled me to validate the structure of generated SVG elements, ensuring that they are correctly formed and rendered.
 
 ## Chapter 10: Classes
 
